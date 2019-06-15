@@ -9,7 +9,7 @@
 using namespace std;
 using namespace chrono;
 
-extern void getmyIP();
+extern void getmyIP(string *ip, string *submask);
 extern string getSubnet(string ip, string submask);
 extern int w_recvfrom(unsigned s, void* ph, int len, int flags, sockaddr* server, int* serverLength);
 extern int getServerIP(string* serverIP, int TIMEOUT, unsigned short int PORT);
