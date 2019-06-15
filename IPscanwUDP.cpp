@@ -1,8 +1,6 @@
 #include "IPscanwUDP.h"
 
-static string ip, submask;
-
-void getmyIP()
+void getmyIP(string* ip, string* submask)
 {
 	string line;
 	ifstream IPFile;
@@ -23,7 +21,7 @@ void getmyIP()
 				//   IPv4 Address. . . . . . . . . . . : 1
 				//1234567890123456789012345678901234567890     
 				line.erase(0, 39);
-				ip = line;
+				*ip = line;
 				//cout << line << endl;
 			}
 			else if ((offset = line.find(search1, 0)) != string::npos)
@@ -31,7 +29,7 @@ void getmyIP()
 				//   Subnet Mask . . . . . . . . . . . : 2
 				//1234567890123456789012345678901234567890     
 				line.erase(0, 39);
-				submask = line;
+				*submask = line;
 				//cout << line << endl;
 			}
 		}
@@ -107,7 +105,8 @@ int w_recvfrom(unsigned s, void* ph, int len, int flags, sockaddr* server, int* 
 int getServerIP(string* serverIP, int TIMEOUT, unsigned short int PORT)
 {
 	// Get subnet address for broadcasting
-	getmyIP();
+	string ip, submask;
+	getmyIP(&ip, &submask);
 	string my_subnet = getSubnet(ip, submask);
 
 	// Startup Winsock
