@@ -1,8 +1,8 @@
 # IPscanwUDP
 A C++ library for UDP discovery.
 ## General description
-A Library for IP scanning between ONE Server and ONE Client in Local Network using UDP (UDP discovery method).
-(Utilizes Winsock 2 - `WS2tcpip.h`)
+A Library for IP scanning between ONE Server and ONE Client in Local Network using UDP (UDP discovery method).  
+(Utilizes Winsock 2 - `WS2tcpip.h`)  
 Can be used to:
 - Scan Server & Client IP.
 - Scan and return host-computer's IP address & subnet mask.
@@ -22,8 +22,8 @@ Can be used to:
   - `-1` if error.
   - ` 0` if timeout.
   - ` 1` if success
-- Example codes:
-  - Client's side example:
+- Example codes:  
+Client's side example:
 ```
 #include <iostream>
 #include "IPscanwUDP.h"
@@ -49,7 +49,7 @@ int main()
 	return 0;
 }
 ```
-  - Server's side example:
+Server's side example:
 ```
 #include <iostream>
 #include "IPscanwUDP.h"
@@ -126,7 +126,7 @@ int main()
   - `-1` if timeout or error
   - An `int`-typed value representing the total number of received characters in the message.
   - **Important NOTICE:** `w_recvfrom()` does not output 0 when timeout as in the original adapted source. However, function's output can be easily changed to your desired value by modifying the source code as mentioned above.
-- Example code: See Microsoft's [documentation](https://docs.microsoft.com/en-us/windows/desktop/api/winsock/nf-winsock-recvfrom)
+- Example code: See Microsoft's [documentation](https://docs.microsoft.com/en-us/windows/desktop/api/winsock/nf-winsock-recvfrom)  
 In a nutshell: Replace `recvfrom()` by `w_recvfrom()` whenever the non-blocking operation is desired.
 ## Disclaimer
 This library is orginally written for used in a Chess game via LAN (school side-project). There is no license and NO security measure in this library. Please use it as you see fit!
