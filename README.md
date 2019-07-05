@@ -129,4 +129,4 @@ int main()
 - Example code: See Microsoft's [documentation](https://docs.microsoft.com/en-us/windows/desktop/api/winsock/nf-winsock-recvfrom)  
 In a nutshell: Replace `recvfrom()` by `w_recvfrom()` whenever the non-blocking operation is desired.
 ## Disclaimer
-This library is orginally written for used in a Chess game via LAN (school side-project). There is no license and NO security measure in this library. Please use it as you see fit!
+This library is orginally written for used in a [Chess game](https://github.com/sieumap43/Online_Chess) via LAN (school side-project). There is no license and NO security measure in this library. Please use it as you see fit!
